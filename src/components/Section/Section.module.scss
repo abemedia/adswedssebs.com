@@ -1,0 +1,11 @@
+@import '../../styles-global/variables';
+
+.section {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}

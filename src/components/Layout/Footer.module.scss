@@ -1,0 +1,28 @@
+@import '../../styles-global/variables';
+
+.footer {
+  font-size: 0.875rem;
+  color: $white;
+  border-top: 1px solid #222;
+  background: #111;
+
+  // TODO: remove when docs flex view is fixed
+  z-index: 1;
+  position: relative;
+
+  h5 {
+    font-size: 0.875rem;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    color: #ddd;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+
+
+# Dependency directories
+node_modules/
+
+# gatsby files
+.cache/
+public
+
+# Mac files
+.DS_Store
+
+# Yarn
+yarn-error.log
+.pnp/
+.pnp.js
+# Yarn Integrity file
+.yarn-integrity

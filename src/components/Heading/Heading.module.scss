@@ -1,0 +1,13 @@
+@import '../../styles-global/variables';
+
+.heading {
+  font-weight: 300;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 3.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 4.5rem;
+  }
+}

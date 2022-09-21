@@ -1,0 +1,49 @@
+// $enable-gradients: true;
+// $enable-shadows: true;
+
+$primary: #e50000;
+// $primary: #23869d;
+$success: #20a142;
+// $success: #26be4e;
+$info: #368294;
+// $info: #409aaf;
+$warning: #ff6c19;
+// $warning: #fe9833;
+$danger: #c20500;
+// $danger: #fe4b33;
+$white: #fff;
+$light: #eee;
+$dark: #222;
+$black: #000;
+
+$body-color: #333;
+$font-family-sans-serif: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$headings-font-weight: 400;
+// $headings-line-height: 1.1;
+
+// Navbar
+$navbar-nav-link-padding-x: 0;
+$navbar-light-color: $dark;
+$navbar-light-hover-color: $black;
+$navbar-light-active-color: $black;
+
+// extra variables (non-bootstrap)
+$navbar-nav-link-padding-y: 1.75rem;
+$navbar-nav-link-font-size: 1.125rem;
+
+// Jumbotron
+$jumbotron-padding: 4rem;
+$jumbotron-color: $white;
+$jumbotron-bg: $dark;
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+// imported for convenience so modules only need to import this file
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+$navbar-height: $navbar-nav-link-font-size * $line-height-base + $navbar-nav-link-padding-y * 2 + 1;

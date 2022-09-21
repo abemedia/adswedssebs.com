@@ -1,0 +1,32 @@
+.navbar.navbar-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  @include transition(0.8s ease all);
+  border-bottom: 1px solid #eee;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $navbar-nav-link-font-size;
+    padding-top: $navbar-nav-link-padding-y;
+    padding-bottom: $navbar-nav-link-padding-y;
+    border: 3px solid rgba(255, 255, 255, 0);
+    border-top: none;
+    margin: -$spacer/2 $spacer;
+
+    &:hover,
+    &:focus {
+      color: $dark;
+      border-bottom-color: $dark;
+    }
+
+    &.active {
+      border-bottom-color: $primary;
+    }
+  }
+}
