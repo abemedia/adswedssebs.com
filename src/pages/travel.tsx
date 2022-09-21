@@ -113,7 +113,7 @@ function TravelPage({ data }: any) {
         <Container>
           <Heading>Entry Requirements</Heading>
           <Row>
-            <Col>
+            <Col sm={6}>
               <h2>COVID19</h2>
               <p>
                 Please note, you will need either proof of vaccination or a negative COVID-19 PCR
@@ -128,7 +128,7 @@ function TravelPage({ data }: any) {
                 COVID19 Travel Requirements
               </Button>
             </Col>
-            <Col>
+            <Col sm={6}>
               <h2>VISA</h2>
               <p>
                 Although visa applications are being processed in real time, please allow an
