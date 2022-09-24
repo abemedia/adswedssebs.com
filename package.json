@@ -28,7 +28,7 @@
     "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-sass": "^5.23.0",
-    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-plugin-sharp": "^4.23.1",
     "gatsby-plugin-sitemap": "^5.23.0",
     "gatsby-plugin-smoothscroll": "^1.1.0",
     "gatsby-plugin-typescript-checker": "^1.1.1",
