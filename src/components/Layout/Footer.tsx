@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Must } from '../../types'
 import * as s from './Footer.module.scss'
@@ -19,7 +19,6 @@ export function Footer() {
       <div className="container py-4 bg-darker d-flex">
         <span className="mr-auto">
           © {new Date().getFullYear()} {data.site.siteMetadata.title} ·{' '}
-          <Link to="/privacy/">Privacy</Link>
         </span>
         <span>
           Website by{' '}
