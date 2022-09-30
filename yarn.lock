@@ -4123,7 +4123,7 @@ babel-plugin-polyfill-regenerator@^0.3.0:
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.1"
 
-babel-plugin-remove-graphql-queries@^4.23.0, babel-plugin-remove-graphql-queries@^4.24.0:
+babel-plugin-remove-graphql-queries@^4.24.0:
   version "4.24.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-4.24.0.tgz#1db00d6e657620debcfb5df553397a4e8ba68f14"
   integrity sha512-B/0Y/JfG+9O9vxZDtievpRymGIWrYtNQ+f0ZVmMcfk8/yclaKvEvefo/DGUXWF7yAH5V8HeEnXeGtQKtfCwE1Q==
@@ -7235,7 +7235,7 @@ gatsby-cli@^4.24.0:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.23.0, gatsby-core-utils@^3.24.0, gatsby-core-utils@^3.9.1:
+gatsby-core-utils@^3.24.0, gatsby-core-utils@^3.9.1:
   version "3.24.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.24.0.tgz#0e757bac28ad953a929046138403b3663b733cf7"
   integrity sha512-P4tbcYOJ1DSYKRP4gIAR9Xta/d/AzjmsK2C6PzX7sNcGnviDKtAIoeV9sE0kNXOqBfUCez25zmAi2cq8NlaxKw==
@@ -7433,10 +7433,10 @@ gatsby-plugin-sass@^5.24.0:
     resolve-url-loader "^3.1.4"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^4.23.0:
-  version "4.23.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.23.0.tgz#c5e5e6fb548380cdad6cd5120bd47d2a5716756a"
-  integrity sha512-w3uIP0W9hgsaoby529mg2UAqeN0fyw4JyT4a5b2x4u4odjfaOuesl4mcbjqfTESwRgwRWxs406Afq9IGIW2wtw==
+gatsby-plugin-sharp@^4.24.0:
+  version "4.24.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.24.0.tgz#30fa66295105096b476371dfb36062c1dc7456db"
+  integrity sha512-wVs8F9zLeiLf02yLi8vjse1vqSrZsx2u3RsMhoSv1bEinyaI5bcoLZ7mMJCsEeZe2G9mvNrPi4Ymhh/YzgxYCg==
   dependencies:
     "@babel/runtime" "^7.15.4"
     "@gatsbyjs/potrace" "^2.3.0"
@@ -7445,8 +7445,8 @@ gatsby-plugin-sharp@^4.23.0:
     debug "^4.3.4"
     filenamify "^4.3.0"
     fs-extra "^10.1.0"
-    gatsby-core-utils "^3.23.0"
-    gatsby-plugin-utils "^3.17.0"
+    gatsby-core-utils "^3.24.0"
+    gatsby-plugin-utils "^3.18.0"
     lodash "^4.17.21"
     mini-svg-data-uri "^1.4.4"
     probe-image-size "^7.2.3"
