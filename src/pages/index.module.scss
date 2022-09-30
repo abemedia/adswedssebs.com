@@ -9,27 +9,32 @@
   left: 0;
   right: 0;
 
+  background-color: rgba($color: #fff, $alpha: 0.75);
+
   @include media-breakpoint-up(sm) {
   }
 
   @include media-breakpoint-up(md) {
-    margin: 50px;
-    padding: 50px;
+  }
 
+  @include media-breakpoint-up(lg) {
     top: 80px;
     bottom: auto;
     right: auto;
+
+    background-color: transparent;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
   }
 
-  @include media-breakpoint-down(lg) {
-    background-color: rgba($color: #fff, $alpha: 0.75);
+  @include media-breakpoint-up(xl) {
+    margin: 50px;
+    padding: 50px;
   }
 }
 
-.img {
+.banner {
   min-height: 700px;
-  height: 100vh;
-  height: -webkit-fill-available !important;
+  height: calc(100vh - 100px);
   width: 100vw !important;
 
   @include media-breakpoint-up(md) {
@@ -60,13 +65,17 @@ h1.heading {
     font-size: 4.75rem;
   }
 
-  // @include media-breakpoint-up(xl) {
-  //   font-size: 6rem;
-  // }
+  @include media-breakpoint-up(xxl) {
+    font-size: 6rem;
+  }
 
   small {
     display: block;
     @extend .subheading;
+
+    @include media-breakpoint-up(xxl) {
+      font-size: 3rem !important;
+    }
   }
 }
 
@@ -82,7 +91,8 @@ h1.heading {
     font-size: 2rem;
   }
 
-  // @include media-breakpoint-up(xl) {
-  //   font-size: 2.5rem;
-  // }
+  @include media-breakpoint-up(xxl) {
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
 }

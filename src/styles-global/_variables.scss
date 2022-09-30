@@ -41,6 +41,18 @@ $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
 
+$grid-breakpoints: (
+  xxxs: 0,
+  xxs: 320px,
+  xs: 568px,
+  sm: 667px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1600px,
+);
+
 // imported for convenience so modules only need to import this file
 @import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';

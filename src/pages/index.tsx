@@ -3,7 +3,7 @@ import { faBed, faCalendarAlt, faPlaneDeparture } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { graphql, Link, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Heading } from '../components/Heading'
 import { Layout } from '../components/Layout'
@@ -17,30 +17,37 @@ import * as s from './index.module.scss'
 
 function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
   const { width } = useWindowSize()
+  const [banner, setBanner] = useState<keyof typeof data>('lg')
+  const [position, setPosition] = useState('right')
 
-  let format: keyof typeof data
-  if (width < 576) {
-    format = 'xs'
-  } else if (width < 768) {
-    format = 'sm'
-  } else {
-    format = 'lg'
-  }
-
-  const position = width < 768 ? 'center bottom' : 'right'
+  useEffect(() => {
+    if (width < 576) {
+      setBanner('xs')
+      setPosition('center bottom')
+    } else if (width < 768) {
+      setBanner('sm')
+      setPosition('center bottom')
+    } else {
+      setBanner('lg')
+      setPosition('right')
+    }
+  }, [width])
 
   return (
     <Layout overlay>
       <SEO title="Home" />
-      <div className="position-relative">
-        <GatsbyImage
-          image={data[format].childImageSharp.gatsbyImageData}
-          loading="eager"
-          objectFit="cover"
-          objectPosition={position}
-          alt=""
-          className={s.img}
-        />
+      <div className={`position-relative ${s.banner}`}>
+        {width && (
+          <GatsbyImage
+            image={data[banner].childImageSharp.gatsbyImageData}
+            loading="eager"
+            objectFit="cover"
+            objectPosition={position}
+            alt=""
+            className={s.banner}
+          />
+        )}
+
         <div className={s.box}>
           <h1 className={s.heading}>
             Adam & Nusayba
@@ -54,13 +61,13 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
             <br />
             at Whitesands Hotel Mombasa, Kenya
           </h2>
-          <div className="d-none d-md-block mt-5">
+          <div className="d-none d-lg-block mt-5">
             <Button size="lg" className={s.btn}>
               RSVP
             </Button>
           </div>
         </div>
-        <a className="arrow-down d-none d-md-inline" href="#content">
+        <a className="arrow-down d-none d-lg-inline" href="#content">
           <ChevronDown />
         </a>
       </div>
