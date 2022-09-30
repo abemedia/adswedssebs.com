@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
@@ -6,8 +6,9 @@ import { Heading } from '../components/Heading'
 import { Layout } from '../components/Layout'
 import { Section } from '../components/Section'
 import { SEO } from '../components/seo'
+import { Must } from '../types'
 
-function TravelPage({ data }: any) {
+function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
   return (
     <Layout>
       <SEO title="Travel" />
@@ -39,12 +40,12 @@ function TravelPage({ data }: any) {
               <Button
                 as="a"
                 href="https://www.kenya-airways.com"
-                className="my-2 mr-2"
+                className="mb-2 mr-2"
                 target="_blank"
               >
                 Kenya Airways
               </Button>
-              <Button as="a" href="https://www.jambojet.com" className="my-2" target="_blank">
+              <Button as="a" href="https://www.jambojet.com" className="mb-2" target="_blank">
                 JamboJet
               </Button>
             </Col>
@@ -69,7 +70,7 @@ function TravelPage({ data }: any) {
                 of 6 hours.
               </p>
               <p>Click the button below for online booking.</p>
-              <Button as="a" href="https://metickets.krc.co.ke/" className="my-2" target="_blank">
+              <Button as="a" href="https://metickets.krc.co.ke/" className="mb-2" target="_blank">
                 Madaraka Express
               </Button>
             </Col>
@@ -94,7 +95,7 @@ function TravelPage({ data }: any) {
                 by __________________(date to be agreed on).
               </p>
               <p>They will be arranging all the guest transfers as required.</p>
-              <Button as="a" href="mailto:sachanias@outlook.com" className="my-2" target="_blank">
+              <Button as="a" href="mailto:sachanias@outlook.com" className="mb-2" target="_blank">
                 Arrange pickup
               </Button>
             </Col>
@@ -124,6 +125,7 @@ function TravelPage({ data }: any) {
                 as="a"
                 href="https://www.kcaa.or.ke/covid-19/covid-19-travel-requirements"
                 target="_blank"
+                className="mb-2"
               >
                 COVID19 Travel Requirements
               </Button>
@@ -136,7 +138,7 @@ function TravelPage({ data }: any) {
                 with this, you can contact the travel agents listed below - just for the convenience
                 of applying for it but there may be a fee for this service.
               </p>
-              <Button as="a" href="https://evisa.go.ke" target="_blank">
+              <Button as="a" href="https://evisa.go.ke" target="_blank" className="mb-2">
                 Apply for a VISA
               </Button>
             </Col>
@@ -147,7 +149,7 @@ function TravelPage({ data }: any) {
         <Container>
           <Heading>Vaccinations and Health</Heading>
           <p>
-            For guests from the UK, Germany &amp; Dubai, no vaccinations are required.
+            For guests from the UK, Germany & Dubai, no vaccinations are required.
             <br />
             For guests from India, yellow fever and polio vaccinations will be a requirement to
             travel.
@@ -166,6 +168,7 @@ function TravelPage({ data }: any) {
             as="a"
             href="https://www.fitfortravel.nhs.uk/destinations/africa/kenya"
             target="_blank"
+            className="mb-2"
           >
             NHS fit for travel: Kenya
           </Button>
@@ -179,10 +182,7 @@ export default TravelPage
 
 export const pageQuery = graphql`
   query Travel {
-    jambojet: file(
-      absolutePath: { regex: "/jambojet.jpg$/" }
-      childImageSharp: { id: { ne: null } }
-    ) {
+    jambojet: file(relativePath: { eq: "jambojet.jpg" }) {
       id
       childImageSharp {
         gatsbyImageData(
@@ -192,12 +192,8 @@ export const pageQuery = graphql`
           layout: CONSTRAINED
         )
       }
-      absolutePath
     }
-    railway: file(
-      absolutePath: { regex: "/railway.png$/" }
-      childImageSharp: { id: { ne: null } }
-    ) {
+    railway: file(relativePath: { eq: "railway.png" }) {
       id
       childImageSharp {
         gatsbyImageData(
@@ -207,9 +203,8 @@ export const pageQuery = graphql`
           layout: CONSTRAINED
         )
       }
-      absolutePath
     }
-    taxi: file(absolutePath: { regex: "/taxi.jpg$/" }, childImageSharp: { id: { ne: null } }) {
+    taxi: file(relativePath: { eq: "taxi.jpg" }) {
       id
       childImageSharp {
         gatsbyImageData(

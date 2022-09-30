@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import { Accordion, Card, Container } from 'react-bootstrap'
 import { Heading } from '../components/Heading'
@@ -19,22 +20,63 @@ function EventsPage() {
       q: 'I am coming from out of town. Where should I stay?',
       a: (
         <>
-          If you are coming from out of town and need a hotel, we have 2 options for you
-          <ol>
-            <li>
-              Sarova Whitesands Beach Resort and Spa which is where the wedding events will be
-              taking place so would be very convenient Please click on the link provided which will
-              take you to the room options at the hotel and from where you can book your room
-            </li>
-            <li>
-              Bamburi Beach Hotel is a 10 minutes’ walk from the beach and a few minutes’ drive from
-              Whitesands Beach Hotel We have secured some early bird discounts on accommodation
-              rates: Ksh. 18,000 double & Ksh. 13,500.00 single on All Inclusive meal plan (all
-              meals and drinks included) Please quote NUSAYBA & ADAM wedding when booking with the
-              hotel or contact our Wedding Planners Sapna & Shitul Sachania for assistance in
-              booking at this hotel (+254-733755563/ +254-733729375/ sachanias@outlook.com)
-            </li>
-          </ol>
+          Please see the <Link to="/accommodation">accommodation page</Link> for more infos.
+        </>
+      ),
+    },
+    {
+      q: 'What will the weather be like?',
+      a: 'In February, you can expect an average of 27°C- 32°C in the day falling slightly in the evenings. It may  get slightly windy near the beach side in the evenings so you can carry a light shawl or jacket.  There will be plenty of sun expected in that month so get ready with your sun block lotions for some fun in the pool, sea and on the beautiful white beaches.',
+    },
+    {
+      q: 'Are kids welcome?',
+      a: "We want to share our day with you all, the whole family. That means the little, and not so little people, are all welcome. We recognize that some of you will want to lose them from time to time to relax and for that reason, we have chosen a hotel that is able to help has a supervised children's activity center where they can be left to enjoy themselves. Please reach out if you have questions!",
+    },
+    {
+      q: 'Are the ceremony and reception locations wheelchair accessible?',
+      a: 'Yes',
+    },
+    {
+      q: 'What should I wear?',
+      a: (
+        <>
+          Please see the <Link to="/events">events page</Link> for more infos.
+        </>
+      ),
+    },
+    {
+      q: "What kind of shoes should/shouldn't I wear?",
+      a: "Be as comfortable as you can as we want to party long and hard. But a tip for the ladies: If you do like your heels, try not to wear stiletto heels on the wedding day because the sand and grass will be problematic. Wedges or block heels should be ok but we wouldn't want any of you breaking any ankles. For the Sangeet/ Mehndi event, as it will be indoors, stilettos and heels are totally ok but your feet may complain after a few dances!",
+    },
+    {
+      q: 'Is it okay to take pictures with our phones and cameras during the wedding?',
+      a: 'Yes! We would love for you to take photos and share them using our hashtag except the Wedding Ceremony where we would ask it is left to the professional team on-site and we will ensure they are all shared for you to have copies of / to download after the event.',
+    },
+    {
+      q: 'Will I be able to get my hair and makeup done?',
+      a: (
+        <>
+          <p>
+            We will organise hairdressers and makeup artists for guests if there are enough ladies
+            who would like to use this service. It will cost KSh 2,500 per person for hair and KSh
+            2,500 per person for make-up (approx. £17 per person for hair or make-up). If you would
+            like to wear a saree or need help draping a chunni, the ladies can help too (rates:
+            Saree draping: 500/- and Chunni draping: 250/-)
+          </p>
+          <p>
+            Please let us know in advance what you would require so that we can organise these
+            services.
+          </p>
+        </>
+      ),
+    },
+    {
+      q: 'Whom should I call with questions or assistance?',
+      a: (
+        <>
+          Please contact our wedding planners Sapna <a href="tel:+254733755563">+254 733 755563</a>{' '}
+          or Shitul <a href="tel:+254733729375">+254 733 729375</a> (both also on WhatsApp) or email{' '}
+          <a href="mailto:sachanias@outlook.com">sachanias@outlook.com</a>.
         </>
       ),
     },

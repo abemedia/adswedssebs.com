@@ -3421,7 +3421,6 @@ type SiteFieldsEnum =
   | 'internal.owner'
   | 'internal.type'
   | 'jsxRuntime'
-  | 'mapping.IntegrationsYaml_category'
   | 'mapping.MarkdownRemark_frontmatter_author'
   | 'parent.children'
   | 'parent.children.children'
@@ -3763,12 +3762,10 @@ type SiteGroupConnection_sumArgs = {
 };
 
 type SiteMapping = {
-  readonly IntegrationsYaml_category: Maybe<Scalars['String']>;
   readonly MarkdownRemark_frontmatter_author: Maybe<Scalars['String']>;
 };
 
 type SiteMappingFilterInput = {
-  readonly IntegrationsYaml_category: InputMaybe<StringQueryOperatorInput>;
   readonly MarkdownRemark_frontmatter_author: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -4314,10 +4311,15 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
-type AboutQueryVariables = Exact<{ [key: string]: never; }>;
+type AccommodationQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AboutQuery = { readonly photo: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+type AccommodationQuery = { readonly whitesands: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly bamburi: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+
+type ExploreQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ExploreQuery = { readonly beaches: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly lighthouse: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly tsavo: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly maasaimara: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly mountkenya: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -4348,7 +4350,7 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type HomeQuery = { readonly aboutPhoto: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+type HomeQuery = { readonly lg: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly sm: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly xs: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
 type LayoutFooterQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4363,7 +4365,7 @@ type SiteTitleQuery = { readonly site: { readonly siteMetadata: { readonly title
 type TravelQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TravelQuery = { readonly jambojet: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly railway: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly taxi: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+type TravelQuery = { readonly jambojet: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly railway: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly taxi: { readonly id: string, readonly absolutePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
 
 }

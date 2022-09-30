@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { Nav, Navbar, NavbarProps } from 'react-bootstrap'
+import { Button, Nav, Navbar, NavbarProps } from 'react-bootstrap'
 import icon from '../../images/icon.svg'
 import { Must } from '../../types'
 import { Footer } from './Footer'
@@ -27,7 +27,7 @@ export function Layout({ children, className, overlay }: LayoutProps) {
 
   return (
     <div className={className} id="layout">
-      <Navbar expand="lg" {...navbarProps} className="mainnav">
+      <Navbar expand="xl" {...navbarProps} className="mainnav">
         <Navbar.Brand as={Link} to="/" className="font-weight-light" style={{ fontSize: 30 }}>
           <img src={icon} height="50px" alt="" /> {data.site.siteMetadata.title}
         </Navbar.Brand>
@@ -40,7 +40,9 @@ export function Layout({ children, className, overlay }: LayoutProps) {
             <NavLink to="/accommodation/">Accommodation</NavLink>
             <NavLink to="/explore/">Explore Kenya</NavLink>
             <NavLink to="/faq/">FAQ</NavLink>
-            <NavLink to="/rsvp/">RSVP</NavLink>
+            <form className="form-inline ml-3">
+              <Button size="lg">RSVP</Button>
+            </form>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
