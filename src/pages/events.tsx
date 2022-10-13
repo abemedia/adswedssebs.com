@@ -102,7 +102,7 @@ function EventsPage() {
                   <Card.Text>
                     Once you have slept off the dancing from the night before, get suited and booted
                     for the wedding reception, to celebrate our final evening together.
-                    <br className="d-none d-lg-block" />
+                    <br className="d-none d-lg-block d-xl-none" />
                     <br className="d-none d-lg-block" />
                     <br className="d-none d-lg-block" />
                   </Card.Text>
