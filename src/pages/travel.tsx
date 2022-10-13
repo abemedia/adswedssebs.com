@@ -18,10 +18,8 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
           <p className="text-center lead mb-5">
             Most international flights will arrive at the Jomo Kenyatta International Airport (JKIA)
             in Nairobi. The other international airport is Moi International Airport (MBA) in
-            Mombasa on the Kenyan coast. It is primarily used for domestic flights, but
-            international routes do arrive here for travelers going to Mombasa. If traveling from
-            Nairobi, you would need to take a domestic flight into Mombasa. This is an approximately
-            45-minute flight.
+            Mombasa on the Kenyan coast. If traveling via Nairobi, you will need to take a domestic
+            flight to Mombasa, which takes approximately 45 minutes.
           </p>
 
           <hr className="my-5" />
@@ -90,9 +88,9 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
             <Col md={6}>
               <h2 className="display-4">Transport to hotel</h2>
               <p>
-                If you require a taxi from the airport to the hotel, please send your flight details
-                and arrival times to our wedding planners, Sapna &amp; Shitul using the button below
-                by __________________(date to be agreed on).
+                If you require transport from the airport or train station to the hotel, please send
+                your arrival times to our wedding planners Sapna &amp; Shitul using the button below
+                by mid January.
               </p>
               <p>They will be arranging all the guest transfers as required.</p>
               <Button as="a" href="mailto:sachanias@outlook.com" className="mb-2" target="_blank">
@@ -117,8 +115,8 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
             <Col sm={6}>
               <h2>COVID19</h2>
               <p>
-                Please note, you will need either proof of vaccination or a negative COVID-19 PCR
-                test conducted no more than 72 hours before departure. Click the button below for a
+                You will need proof of vaccination or, if unvaccinated, a negative COVID-19 PCR test
+                conducted no more than 72 hours before departure. Click the button below for a
                 comprehensive list of Kenya’s up-to-date COVID19 entry requirements.
               </p>
               <Button
@@ -133,13 +131,15 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
             <Col sm={6}>
               <h2>VISA</h2>
               <p>
-                Although visa applications are being processed in real time, please allow an
-                allowance of a few working days especially if applying on a Friday. If you need help
-                with this, you can contact the travel agents listed below - just for the convenience
-                of applying for it but there may be a fee for this service.
+                Although visa applications are being processed in real time, please allow for a few
+                working days, especially if applying on a Friday. If you need help with this, feel
+                free to contact our wedding planners Sapna & Shitul Sachania for assistance..
               </p>
-              <Button as="a" href="https://evisa.go.ke" target="_blank" className="mb-2">
+              <Button as="a" href="https://evisa.go.ke" target="_blank" className="mb-2 mr-2">
                 Apply for a VISA
+              </Button>
+              <Button as="a" href="mailto:sachanias@outlook.com" target="_blank" className="mb-2">
+                Contact wedding planners
               </Button>
             </Col>
           </Row>
@@ -157,12 +157,12 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
           <p>
             Please do bring malaria prophylaxis and some good mosquito repellant to save you the
             time going shopping for it here. In Mombasa, we generally don’t take antimalarials, but
-            that is as we are here semi-permanently. We do take measures not to get bitten.
+            that is as we are here permanently. We do however take measures not to get bitten.
           </p>
           <p>
             Below is a fit for travel list, but realistically you will not require any vaccines
             unless you want to go off the beaten track. If you have been to a country with yellow
-            fever you will need the yellow fever certificate to enter the country.
+            fever you will need the yellow fever certificate to enter Kenya.
           </p>
           <Button
             as="a"

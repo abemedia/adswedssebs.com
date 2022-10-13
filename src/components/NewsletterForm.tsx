@@ -18,7 +18,8 @@ export function NewsletterForm() {
     <Form onSubmit={handleSubmit}>
       <h2 className="text-uppercase text-center mb-4">Sign up to our newsletter</h2>
       <p className="lead text-center mb-4">
-        Stay up-to-date regarding the wedding. We promise we won&apos;t spam you!
+        Stay up-to-date regarding the wedding. We promise we won’t spam you and will only send out
+        important infos!
       </p>
       <hr />
       {message && (

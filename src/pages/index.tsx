@@ -8,6 +8,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Heading } from '../components/Heading'
 import { Layout } from '../components/Layout'
 import { NewsletterForm } from '../components/NewsletterForm'
+import { RSVP } from '../components/RSVP'
 import { Section } from '../components/Section'
 import { SEO } from '../components/seo'
 import { useWindowSize } from '../hooks/useWindowSize'
@@ -16,8 +17,12 @@ import { Must } from '../types'
 import * as s from './index.module.scss'
 
 function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
+  const [showRSVP, setShowRSVP] = useState(false)
+  const { allGoogleForms, ...banners } = data
+  const rsvp = JSON.parse(allGoogleForms.edges[0].node.internal.content)
+
   const { width } = useWindowSize()
-  const [banner, setBanner] = useState<keyof typeof data>('lg')
+  const [banner, setBanner] = useState<keyof typeof banners>('lg')
   const [position, setPosition] = useState('right')
 
   useEffect(() => {
@@ -35,11 +40,12 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
 
   return (
     <Layout overlay>
+      <RSVP {...rsvp} show={showRSVP} onHide={() => setShowRSVP(false)} />
       <SEO title="Home" />
       <div className={`position-relative ${s.banner}`}>
         {width && (
           <GatsbyImage
-            image={data[banner].childImageSharp.gatsbyImageData}
+            image={banners[banner].childImageSharp.gatsbyImageData}
             loading="eager"
             objectFit="cover"
             objectPosition={position}
@@ -59,10 +65,10 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
           <h2 className={s.subheading}>
             17th, 18th & 19th February
             <br />
-            at Whitesands Hotel Mombasa, Kenya
+            at Sarova Whitesands Mombasa, Kenya
           </h2>
           <div className="d-none d-lg-block mt-5">
-            <Button size="lg" className={s.btn}>
+            <Button size="lg" className={s.btn} onClick={() => setShowRSVP(true)}>
               RSVP
             </Button>
           </div>
@@ -82,7 +88,7 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
         <Container>
           <Heading>We’re getting married!</Heading>
           <p>
-            We cant wait to celebrate our special day with you! We have created this website as a
+            We can’t wait to celebrate our special day with you! We have created this website as a
             convenient way to share all of the important details with you in the lead up to our
             wedding. This includes information on getting to Kenya, accommodation options, event
             details and some handy tips if you are considering extending your visit to travel around
@@ -91,14 +97,28 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
           <p>
             Thank you for your ongoing love and support. We are so excited to celebrate our wedding
             with you and can’t wait to see you all there! For more information or general questions,
-            please see our contact page and we will aim to get back to you as soon as possible.
+            please contact our wedding planners Sapna & Shitul Sachania on{' '}
+            <a
+              href="mailto:sachanias@outlook.com"
+              target="_blank"
+              className="mb-2"
+              rel="noreferrer"
+            >
+              sachanias@outlook.com
+            </a>
+            , who will aim to get back to you as soon as possible.
           </p>
         </Container>
       </Section>
       <Section variant="primary" className="text-white text-center">
         <Container>
-          <p className="display-4 mb-4">Please don’t forget to RSVP by the 25th October 2022.</p>
-          <Button size="lg" variant="dark" style={{ fontSize: '2rem' }}>
+          <p className="display-4 mb-4">Please don’t forget to RSVP by the 10th November 2022.</p>
+          <Button
+            size="lg"
+            variant="dark"
+            style={{ fontSize: '2rem' }}
+            onClick={() => setShowRSVP(true)}
+          >
             Click here to RSVP
           </Button>
         </Container>
@@ -160,6 +180,16 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query Home {
+    allGoogleForms {
+      edges {
+        node {
+          id
+          internal {
+            content
+          }
+        }
+      }
+    }
     lg: file(relativePath: { eq: "header.jpg" }) {
       id
       childImageSharp {

@@ -26,14 +26,20 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
             <Col md={6}>
               <h2 className="display-4">Sarova Whitesands Beach Resort & Spa</h2>
               <p>
-                Sarova Whitesands Beach Resort and Spa which is where the wedding events will be
-                taking place so would be very convenient.
+                Sarova Whitesands Beach Resort and Spa is where the wedding events will be taking
+                place so it would be very convenient. We have negotiated a special wedding rate
+                which can be accessed using the button below.
               </p>
               <p>
                 Please click on the following link which will take you to the room options at the
                 hotel and from where you can book your room.
               </p>
-              <Button as="a" href="about:blank" target="_blank" className="mb-2">
+              <Button
+                as="a"
+                href="https://reservations.travelclick.com/104094?groupID=3681249&adults=1"
+                target="_blank"
+                className="mb-2"
+              >
                 Book a room
               </Button>
             </Col>
@@ -55,11 +61,24 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
                 from Whitesands Beach Hotel.
               </p>
               <p>
-                We have secured some early bird discounts on accommodation rates. Please quote{' '}
-                <code>NUSAYBA & ADAM WEDDING</code> when booking with the hotel or contact our
-                wedding planners Sapna & Shitul Sachania for assistance.
+                We have secured a 10% discount on accommodation rates. Please quote{' '}
+                <code>NUSAD</code> when booking with the hotel or contact our wedding planners Sapna
+                & Shitul Sachania for assistance.
               </p>
-              <Button as="a" href="about:blank" target="_blank" className="mb-2 mr-2">
+              <Button
+                as="a"
+                href="https://bamburibeachkenya.com/"
+                target="_blank"
+                className="mb-2 mr-2"
+              >
+                View Hotel Website
+              </Button>
+              <Button
+                as="a"
+                href="mailto:reservations@bamburibeachkenya.com"
+                target="_blank"
+                className="mb-2 mr-2"
+              >
                 Book a room
               </Button>
               <Button as="a" href="mailto:sachanias@outlook.com" target="_blank" className="mb-2">
@@ -75,6 +94,19 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
               />
             </Col>
           </Row>
+          <hr className="my-5" />
+          <div className="text-center">
+            <h2 className="display-4">Other Options</h2>
+            <p>See the link below for a list of alternative options in the near vicinity.</p>
+            <Button
+              as="a"
+              href="https://www.google.com/travel/hotels/Sarova%20Whitesands%20Beach%20Resort%20%26%20Spa%20Mombasa%20-%20Beach%20Hotel%20In%20Mombasa?q=hotels%20near%20sarova%20whitesands%20mombasa&g2lb=2502548%2C2503771%2C2503781%2C4258168%2C4270442%2C4284970%2C4291517%2C4306835%2C4597339%2C4718358%2C4723331%2C4731329%2C4757164%2C4814050%2C4816977%2C4826689%2C4852066%2C4861688%2C4871746%2C4877114%2C26483161&hl=en-AE&gl=ae&ssta=1&ts=CAESCgoCCAMKAggDEAAaaQpLEkc6RVNhcm92YSBXaGl0ZXNhbmRzIEJlYWNoIFJlc29ydCAmIFNwYSBNb21iYXNhIC0gQmVhY2ggSG90ZWwgSW4gTW9tYmFzYRoAEhoSFAoHCOcPEAIYERIHCOcPEAIYFBgDMgIIASoLCgcoAToDQUVEGgA&rp=ogFFU2Fyb3ZhIFdoaXRlc2FuZHMgQmVhY2ggUmVzb3J0ICYgU3BhIE1vbWJhc2EgLSBCZWFjaCBIb3RlbCBJbiBNb21iYXNhOAFAAEgCmgICCAA&ap=MANatQEKBQimBBAAIgNBRUQqFgoHCOYPEAsYChIHCOYPEAsYCxgBKACwAQBYAWgBcgQIAhgAmgFHEkVTYXJvdmEgV2hpdGVzYW5kcyBCZWFjaCBSZXNvcnQgJiBTcGEgTW9tYmFzYSAtIEJlYWNoIEhvdGVsIEluIE1vbWJhc2GiARQKCS9tLzAxY2ZkMxIHTW9tYmFzYZICAggRkgICCAySAgIIEpICAggTkgICCA6SAgIIFJIBAiABaAA&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwig1f77id76AhUAAAAAHQAAAAAQBA"
+              target="_blank"
+              className="mb-2 mr-2"
+            >
+              View nearby accommodation
+            </Button>
+          </div>
         </Container>
       </Section>
     </Layout>

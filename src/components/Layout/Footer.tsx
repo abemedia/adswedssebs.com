@@ -1,25 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { Must } from '../../types'
 import * as s from './Footer.module.scss'
 
 export function Footer() {
-  const data: Must<Queries.LayoutFooterQuery> = useStaticQuery(graphql`
-    query LayoutFooter {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <footer className={s.footer}>
       <div className="container py-4 bg-darker d-flex">
-        <span className="mr-auto">
-          © {new Date().getFullYear()} {data.site.siteMetadata.title} ·{' '}
-        </span>
+        <span className="mr-auto">© {new Date().getFullYear()} AdsWedsSebs.com</span>
         <span>
           Website by{' '}
           <a
