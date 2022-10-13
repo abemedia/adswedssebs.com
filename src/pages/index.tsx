@@ -19,7 +19,7 @@ import * as s from './index.module.scss'
 function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
   const [showRSVP, setShowRSVP] = useState(false)
   const { allGoogleForms, ...banners } = data
-  const rsvp = JSON.parse(allGoogleForms.edges[0].node.internal.content)
+  const rsvp = JSON.parse(allGoogleForms.edges[0].node.form)
 
   const { width } = useWindowSize()
   const [banner, setBanner] = useState<keyof typeof banners>('lg')
@@ -184,9 +184,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          internal {
-            content
-          }
+          form
         }
       }
     }

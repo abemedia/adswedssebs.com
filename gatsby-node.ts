@@ -12,20 +12,20 @@ export const sourceNodes = async ({
 }: SourceNodesArgs) => {
   const { createNode } = actions
 
-  forms.map(async item => {
-    const form = await googleFormsToJson(item)
-
-    const formNode = {
-      form,
-      id: createNodeId(form.action),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'GoogleForms',
-        content: JSON.stringify(form),
-        contentDigest: createContentDigest(form),
-      },
-    }
-    createNode(formNode)
-  })
+  await Promise.all(
+    forms.map(async item => {
+      const form = await googleFormsToJson(item)
+      createNode({
+        form: JSON.stringify(form),
+        id: createNodeId(form.action),
+        parent: null,
+        children: [],
+        internal: {
+          type: 'GoogleForms',
+          content: JSON.stringify(form),
+          contentDigest: createContentDigest(form),
+        },
+      })
+    })
+  )
 }

@@ -25,16 +25,14 @@ export function Layout({ children, className, overlay }: LayoutProps) {
         edges {
           node {
             id
-            internal {
-              content
-            }
+            form
           }
         }
       }
     }
   `)
 
-  const rsvp = JSON.parse(data.allGoogleForms.edges[0].node.internal.content)
+  const rsvp = JSON.parse(data.allGoogleForms.edges[0].node.form)
 
   const navbarProps: NavbarProps = overlay ? { fixed: 'top' } : { sticky: 'top' }
 
