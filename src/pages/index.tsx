@@ -6,7 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { Heading } from '../components/Heading'
-import { Layout } from '../components/Layout'
+import { Layout, UserStateContext } from '../components/Layout'
 import { NewsletterForm } from '../components/NewsletterForm'
 import { RSVP } from '../components/RSVP'
 import { Section } from '../components/Section'
@@ -63,7 +63,21 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
 
           <br />
           <h2 className={s.subheading}>
-            17th, 18th & 19th February
+            <UserStateContext.Consumer>
+              {password => {
+                switch (password) {
+                  case 'mombasa':
+                    return '17th, 18th & 19th'
+                  case 'kenya':
+                    return '18th & 19th'
+                  case 'beach':
+                    return '19th'
+                  default:
+                    return ''
+                }
+              }}
+            </UserStateContext.Consumer>{' '}
+            February
             <br />
             at Sarova Whitesands Mombasa, Kenya
           </h2>
@@ -159,7 +173,7 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
             <Col xs={6} lg={3} className="mb-5">
               <FontAwesomeIcon icon={faSafari} size="5x" className="mb-4" />
               <h4>Explore Kenya</h4>
-              <p>Find out about cool stuff you and your family can do while in Kenya.</p>
+              <p>Find out about cool things you and your family can do while in Kenya.</p>
               <Button as={Link} to="explore">
                 More Info
               </Button>

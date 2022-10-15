@@ -88,9 +88,9 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
             <Col md={6}>
               <h2 className="display-4">Transport to hotel</h2>
               <p>
-                If you require transport from the airport or train station to the hotel, please send
-                your arrival times to our wedding planners Sapna &amp; Shitul using the button below
-                by mid January.
+                If you require transport from the airport or railway station to the hotel, please
+                send your arrival times to our wedding planners Sapna &amp; Shitul, using the button
+                below, by mid-January.
               </p>
               <p>They will be arranging all the guest transfers as required.</p>
               <Button as="a" href="mailto:sachanias@outlook.com" className="mb-2" target="_blank">
@@ -156,13 +156,14 @@ function TravelPage({ data }: PageProps<Must<Queries.TravelQuery>>) {
           </p>
           <p>
             Please do bring malaria prophylaxis and some good mosquito repellant to save you the
-            time going shopping for it here. In Mombasa, we generally don’t take antimalarials, but
-            that is as we are here permanently. We do however take measures not to get bitten.
+            time going shopping for it here. In Mombasa, people generally don’t take antimalarials,
+            but that is as they live there permanently. They do, however, take measures not to get
+            bitten and we recommend you do the same.
           </p>
           <p>
-            Below is a fit for travel list, but realistically you will not require any vaccines
+            Below is a fit for travel list, but realistically you will not require any vaccines,
             unless you want to go off the beaten track. If you have been to a country with yellow
-            fever you will need the yellow fever certificate to enter Kenya.
+            fever, you will need the yellow fever certificate to enter Kenya.
           </p>
           <Button
             as="a"

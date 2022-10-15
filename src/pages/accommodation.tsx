@@ -17,9 +17,9 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
           <Heading className="text-center">Accommodation</Heading>
           <p className="text-center lead mb-5">
             We recommend staying at Sarova Whitesands Beach Resort & Spa, where the wedding will
-            take place. Alternatively Bamburi Beach Hotel is nearby. Of course you can make
-            different arrangements, however keep in mind that the Mehndi will go on until late so
-            you’ll probably want to be nearby.
+            take place. Alternatively, Bamburi Beach Hotel is nearby. Feel free to make different
+            arrangements, however please keep in mind that the mehndi will go on until late, so
+            you’ll probably want accommodation nearby.
           </p>
           <hr className="my-5" />
           <Row>
@@ -27,13 +27,10 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
               <h2 className="display-4">Sarova Whitesands Beach Resort & Spa</h2>
               <p>
                 Sarova Whitesands Beach Resort and Spa is where the wedding events will be taking
-                place so it would be very convenient. We have negotiated a special wedding rate
-                which can be accessed using the button below.
+                place, so it would be the most convenient option. We have negotiated a special
+                wedding rate, which can be accessed using the button below.
               </p>
-              <p>
-                Please click on the following link which will take you to the room options at the
-                hotel and from where you can book your room.
-              </p>
+              <p>Please click on the following link to book your room.</p>
               <Button
                 as="a"
                 href="https://reservations.travelclick.com/104094?groupID=3681249&adults=1"
@@ -57,13 +54,13 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
             <Col md={{ offset: 1, span: 6, order: 'last' }}>
               <h2 className="display-4">Bamburi Beach Hotel</h2>
               <p>
-                Bamburi Beach Hotel is a 10 minutes’ walk from the beach and a few minutes’ drive
-                from Whitesands Beach Hotel.
+                Bamburi Beach Hotel is a 10 minute walk from the beach and a few minutes drive from
+                Whitesands Beach Hotel.
               </p>
               <p>
                 We have secured a 10% discount on accommodation rates. Please quote{' '}
-                <code>NUSAD</code> when booking with the hotel or contact our wedding planners Sapna
-                & Shitul Sachania for assistance.
+                <code>NUSAD</code> when booking with the hotel, or contact our wedding planners
+                Sapna & Shitul Sachania for assistance.
               </p>
               <Button
                 as="a"
@@ -71,7 +68,7 @@ function AccommodationPage({ data }: PageProps<Must<Queries.AccommodationQuery>>
                 target="_blank"
                 className="mb-2 mr-2"
               >
-                View Hotel Website
+                View hotel website
               </Button>
               <Button
                 as="a"

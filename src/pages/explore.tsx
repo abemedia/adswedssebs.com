@@ -42,8 +42,7 @@ function ExplorePage({ data }: PageProps<Must<Queries.ExploreQuery>>) {
         <Container>
           <Heading className="text-center">Explore Kenya</Heading>
           <p className="text-center lead mb-5">
-            Click on the images below to see more information on fun things to do while you’re in
-            Kenya.
+            Click on the images below to see more information on fun things to do in Kenya.
           </p>
           <CardColumns>
             <Item
@@ -125,20 +124,20 @@ function ExplorePage({ data }: PageProps<Must<Queries.ExploreQuery>>) {
         <Container className="text-center lead">
           <h2 className="display-4">Get a local travel agent</h2>
           <p>
-            We have a trusted travel agent with whom we’ve agreed discounted rates for our guests,
-            who can assist you with bookings. Please mention you are coming for the wedding of Adam
-            Bouqdib & Nusayba Anjarwalla.
+            We have a trusted travel agent who can assist you with bookings. We have arranged
+            discounted rates for our guests. Please mention the code <code>ANJAR0223</code> to get
+            the discounted rate.
           </p>
           <h3>African Quest Safaris Ltd</h3>
           <p>
             Email: <a href="mailto:info@africanquest.co.ke">info@africanquest.co.ke</a> or{' '}
             <a href="mailto:taradamji@africanquest.co.ke">taradamji@africanquest.co.ke</a>
             <br />
-            Catherine Whatsapp: <a href="tel:+254723114911">+254 723 114 911</a>
+            Catherine (Whatsapp): <a href="tel:+254723114911">+254 723 114 911</a>
             <br />
-            Alice Whatsapp: <a href="tel:+254704154227">+254 704 154 227</a>
+            Alice (Whatsapp): <a href="tel:+254704154227">+254 704 154 227</a>
             <br />
-            Taher Adamji Whatsapp: <a href="tel:+254722703852">+254 722 703852</a>
+            Taher Adamji (Whatsapp): <a href="tel:+254722703852">+254 722 703852</a>
           </p>
         </Container>
       </Section>
