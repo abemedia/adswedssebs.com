@@ -5,10 +5,11 @@ import { graphql, Link, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Row } from 'react-bootstrap'
+import { EventsContext } from '../components/EventsContext'
 import { Heading } from '../components/Heading'
-import { Layout, UserStateContext } from '../components/Layout'
+import { Layout } from '../components/Layout'
 import { NewsletterForm } from '../components/NewsletterForm'
-import { RSVP } from '../components/RSVP'
+import { RSVPContext } from '../components/RSVP'
 import { Section } from '../components/Section'
 import { SEO } from '../components/seo'
 import { useWindowSize } from '../hooks/useWindowSize'
@@ -17,12 +18,8 @@ import { Must } from '../types'
 import * as s from './index.module.scss'
 
 function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
-  const [showRSVP, setShowRSVP] = useState(false)
-  const { allGoogleForms, ...banners } = data
-  const rsvp = JSON.parse(allGoogleForms.edges[0].node.form)
-
   const { width } = useWindowSize()
-  const [banner, setBanner] = useState<keyof typeof banners>('lg')
+  const [banner, setBanner] = useState<keyof typeof data>('lg')
   const [position, setPosition] = useState('right')
 
   useEffect(() => {
@@ -40,152 +37,160 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
 
   return (
     <Layout overlay>
-      <RSVP {...rsvp} show={showRSVP} onHide={() => setShowRSVP(false)} />
       <SEO title="Home" />
-      <div className={`position-relative ${s.banner}`}>
-        {width && (
-          <GatsbyImage
-            image={banners[banner].childImageSharp.gatsbyImageData}
-            loading="eager"
-            objectFit="cover"
-            objectPosition={position}
-            alt=""
-            className={s.banner}
-          />
-        )}
+      <RSVPContext.Consumer>
+        {({ setShow }) => {
+          return (
+            <>
+              <div className={`position-relative ${s.banner}`}>
+                {width && (
+                  <GatsbyImage
+                    image={data[banner].childImageSharp.gatsbyImageData}
+                    loading="eager"
+                    objectFit="cover"
+                    objectPosition={position}
+                    alt=""
+                    className={s.banner}
+                  />
+                )}
 
-        <div className={s.box}>
-          <h1 className={s.heading}>
-            Adam & Nusayba
-            <hr />
-            <small>invite you to their wedding celebration!</small>
-          </h1>
+                <div className={s.box}>
+                  <h1 className={s.heading}>
+                    Adam & Nusayba
+                    <hr />
+                    <small>invite you to their wedding celebration!</small>
+                  </h1>
 
-          <br />
-          <h2 className={s.subheading}>
-            <UserStateContext.Consumer>
-              {password => {
-                switch (password) {
-                  case 'mombasa':
-                    return '17th, 18th & 19th'
-                  case 'kenya':
-                    return '18th & 19th'
-                  case 'beach':
-                    return '19th'
-                  default:
-                    return ''
-                }
-              }}
-            </UserStateContext.Consumer>{' '}
-            February
-            <br />
-            at Sarova Whitesands Mombasa, Kenya
-          </h2>
-          <div className="d-none d-lg-block mt-5">
-            <Button size="lg" className={s.btn} onClick={() => setShowRSVP(true)}>
-              RSVP
-            </Button>
-          </div>
-        </div>
-        <a className="arrow-down d-none d-lg-inline" href="#content">
-          <ChevronDown />
-        </a>
-      </div>
+                  <br />
+                  <h2 className={s.subheading}>
+                    <EventsContext.Consumer>
+                      {({ bbq, civil, mehndi, reception }) => {
+                        return (
+                          <>
+                            {bbq && '17th, '}
+                            {(civil || mehndi) && '18th & '}
+                            {reception && '19th'} February
+                          </>
+                        )
+                      }}
+                    </EventsContext.Consumer>{' '}
+                    <br />
+                    at Sarova Whitesands Mombasa, Kenya
+                  </h2>
+                  <div className="d-none d-lg-block mt-5">
+                    <Button size="lg" className={s.btn} onClick={() => setShow(true)}>
+                      RSVP
+                    </Button>
+                  </div>
+                </div>
+                <a className="arrow-down d-none d-lg-inline" href="#content">
+                  <ChevronDown />
+                </a>
+              </div>
 
-      <span
-        id="content"
-        style={{
-          scrollMarginTop: '5.4375rem',
+              <span
+                id="content"
+                style={{
+                  scrollMarginTop: '5.4375rem',
+                }}
+              />
+              <Section className="text-center lead">
+                <Container>
+                  <Heading>We’re getting married!</Heading>
+                  <p>
+                    We can’t wait to celebrate our special day with you! We have created this
+                    website as a convenient way to share all of the important details with you in
+                    the lead up to our wedding. This includes information on getting to Kenya,
+                    accommodation options, event details and some handy tips if you are considering
+                    extending your visit to travel around magical Kenya!
+                  </p>
+                  <p>
+                    Thank you for your ongoing love and support. We are so excited to celebrate our
+                    wedding with you and can’t wait to see you all there! For more information or
+                    general questions, please contact our wedding planners Sapna & Shitul Sachania
+                    on{' '}
+                    <a
+                      href="mailto:sachanias@outlook.com"
+                      target="_blank"
+                      className="mb-2"
+                      rel="noreferrer"
+                    >
+                      sachanias@outlook.com
+                    </a>
+                    , who will aim to get back to you as soon as possible.
+                  </p>
+                </Container>
+              </Section>
+              <Section variant="primary" className="text-white text-center">
+                <Container>
+                  <p className="display-4 mb-4">
+                    Please don’t forget to RSVP by the 10th November 2022.
+                  </p>
+                  <Button
+                    size="lg"
+                    variant="dark"
+                    style={{ fontSize: '2rem' }}
+                    onClick={() => setShow(true)}
+                  >
+                    Click here to RSVP
+                  </Button>
+                </Container>
+              </Section>
+              <Section className="text-center">
+                <Container>
+                  <Heading as="h2">Infos</Heading>
+                  <p className="lead mb-5">
+                    Please see the following links for more information about our wedding &amp;
+                    visiting Kenya. Make sure you check out the travel page to find out about VISAs,
+                    required COVID tests etc.
+                  </p>
+                  <Row className="mb-n5">
+                    <Col xs={6} lg={3} className="mb-5">
+                      <FontAwesomeIcon icon={faCalendarAlt} size="5x" className="mb-4" />
+                      <h4>Events</h4>
+                      <p>Find out what’s on, where it is and the dress code of each event.</p>
+                      <Button as={Link} to="events">
+                        More Info
+                      </Button>
+                    </Col>
+                    <Col xs={6} lg={3} className="mb-5">
+                      <FontAwesomeIcon icon={faPlaneDeparture} size="5x" className="mb-4" />
+                      <h4>Travel</h4>
+                      <p>
+                        Find out how to get to our wedding, including flights and hotel transfer.
+                      </p>
+                      <Button as={Link} to="travel">
+                        More Info
+                      </Button>
+                    </Col>
+                    <Col xs={6} lg={3} className="mb-5">
+                      <FontAwesomeIcon icon={faBed} size="5x" className="mb-4" />
+                      <h4>Accommodation</h4>
+                      <p>Find out about available hotels in the area and where to book them.</p>
+                      <Button as={Link} to="accommodation">
+                        More Info
+                      </Button>
+                    </Col>
+                    <Col xs={6} lg={3} className="mb-5">
+                      <FontAwesomeIcon icon={faSafari} size="5x" className="mb-4" />
+                      <h4>Explore Kenya</h4>
+                      <p>Find out about cool things you and your family can do while in Kenya.</p>
+                      <Button as={Link} to="explore">
+                        More Info
+                      </Button>
+                    </Col>
+                  </Row>
+                </Container>
+              </Section>
+              <Section variant="dark" className="text-white">
+                <Container style={{ maxWidth: '600px' }}>
+                  <NewsletterForm />
+                </Container>
+              </Section>
+            </>
+          )
         }}
-      />
-      <Section className="text-center lead">
-        <Container>
-          <Heading>We’re getting married!</Heading>
-          <p>
-            We can’t wait to celebrate our special day with you! We have created this website as a
-            convenient way to share all of the important details with you in the lead up to our
-            wedding. This includes information on getting to Kenya, accommodation options, event
-            details and some handy tips if you are considering extending your visit to travel around
-            magical Kenya!
-          </p>
-          <p>
-            Thank you for your ongoing love and support. We are so excited to celebrate our wedding
-            with you and can’t wait to see you all there! For more information or general questions,
-            please contact our wedding planners Sapna & Shitul Sachania on{' '}
-            <a
-              href="mailto:sachanias@outlook.com"
-              target="_blank"
-              className="mb-2"
-              rel="noreferrer"
-            >
-              sachanias@outlook.com
-            </a>
-            , who will aim to get back to you as soon as possible.
-          </p>
-        </Container>
-      </Section>
-      <Section variant="primary" className="text-white text-center">
-        <Container>
-          <p className="display-4 mb-4">Please don’t forget to RSVP by the 10th November 2022.</p>
-          <Button
-            size="lg"
-            variant="dark"
-            style={{ fontSize: '2rem' }}
-            onClick={() => setShowRSVP(true)}
-          >
-            Click here to RSVP
-          </Button>
-        </Container>
-      </Section>
-      <Section className="text-center">
-        <Container>
-          <Heading as="h2">Infos</Heading>
-          <p className="lead mb-5">
-            Please see the following links for more information about our wedding &amp; visiting
-            Kenya. Make sure you check out the travel page to find out about VISAs, required COVID
-            tests etc.
-          </p>
-          <Row className="mb-n5">
-            <Col xs={6} lg={3} className="mb-5">
-              <FontAwesomeIcon icon={faCalendarAlt} size="5x" className="mb-4" />
-              <h4>Events</h4>
-              <p>Find out what’s on, where it is and the dress code of each event.</p>
-              <Button as={Link} to="events">
-                More Info
-              </Button>
-            </Col>
-            <Col xs={6} lg={3} className="mb-5">
-              <FontAwesomeIcon icon={faPlaneDeparture} size="5x" className="mb-4" />
-              <h4>Travel</h4>
-              <p>Find out how to get to our wedding, including flights and hotel transfer.</p>
-              <Button as={Link} to="travel">
-                More Info
-              </Button>
-            </Col>
-            <Col xs={6} lg={3} className="mb-5">
-              <FontAwesomeIcon icon={faBed} size="5x" className="mb-4" />
-              <h4>Accommodation</h4>
-              <p>Find out about available hotels in the area and where to book them.</p>
-              <Button as={Link} to="accommodation">
-                More Info
-              </Button>
-            </Col>
-            <Col xs={6} lg={3} className="mb-5">
-              <FontAwesomeIcon icon={faSafari} size="5x" className="mb-4" />
-              <h4>Explore Kenya</h4>
-              <p>Find out about cool things you and your family can do while in Kenya.</p>
-              <Button as={Link} to="explore">
-                More Info
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </Section>
-      <Section variant="dark" className="text-white">
-        <Container style={{ maxWidth: '600px' }}>
-          <NewsletterForm />
-        </Container>
-      </Section>
+      </RSVPContext.Consumer>
     </Layout>
   )
 }
@@ -194,14 +199,6 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query Home {
-    allGoogleForms {
-      edges {
-        node {
-          id
-          form
-        }
-      }
-    }
     lg: file(relativePath: { eq: "header.jpg" }) {
       id
       childImageSharp {

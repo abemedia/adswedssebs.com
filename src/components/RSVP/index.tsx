@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useMemo, useState } from 'react'
 import { Button, Form, Modal, ModalProps } from 'react-bootstrap'
 import { GoogleFormProvider, useGoogleForm } from 'react-google-forms-hooks'
 import { RadioInput } from '../GoogleForm/RadioInput'
@@ -22,6 +22,18 @@ interface RSVPProps extends ModalProps {
       | 'LINEAR'
     required: boolean
   }[]
+}
+
+interface RSVPContextType {
+  show: boolean
+  setShow: (b: boolean) => void
+}
+
+export const RSVPContext = createContext<RSVPContextType>({ show: false, setShow: () => {} })
+
+export const useRSVP = () => {
+  const [showRSVP, setShowRSVP] = useState(false)
+  return useMemo(() => ({ show: showRSVP, setShow: setShowRSVP }), [showRSVP, setShowRSVP])
 }
 
 export function RSVP(props: RSVPProps) {

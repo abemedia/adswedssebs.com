@@ -14,9 +14,10 @@ import {
   OverlayTrigger,
   Tooltip,
 } from 'react-bootstrap'
+import { Events } from '../EventsContext'
 
 interface LoginProps {
-  submit: (s: string) => void
+  submit: (s: Events) => void
 }
 
 export function Login({ submit }: LoginProps) {
@@ -25,15 +26,21 @@ export function Login({ submit }: LoginProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    setError(false)
 
     switch (password) {
       case 'mombasa':
-      case 'kenya':
-      case 'beach':
-        setError(false)
-        submit(password)
+        submit({ bbq: true, civil: true, mehndi: true, reception: true })
         break
-
+      case 'kenya':
+        submit({ bbq: false, civil: true, mehndi: true, reception: true })
+        break
+      case 'safari':
+        submit({ bbq: false, civil: false, mehndi: true, reception: true })
+        break
+      case 'beach':
+        submit({ bbq: false, civil: false, mehndi: false, reception: true })
+        break
       default:
         setError(true)
         break

@@ -969,11 +969,16 @@ type GatsbyImagePlaceholder =
   | 'tracedSVG';
 
 type GoogleForms = Node & {
+  readonly bbq: Maybe<Scalars['Boolean']>;
   readonly children: ReadonlyArray<Node>;
+  readonly civil: Maybe<Scalars['Boolean']>;
   readonly form: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly link: Maybe<Scalars['String']>;
+  readonly mehndi: Maybe<Scalars['Boolean']>;
   readonly parent: Maybe<Node>;
+  readonly reception: Maybe<Scalars['Boolean']>;
 };
 
 type GoogleFormsConnection = {
@@ -1022,6 +1027,7 @@ type GoogleFormsEdge = {
 };
 
 type GoogleFormsFieldsEnum =
+  | 'bbq'
   | 'children'
   | 'children.children'
   | 'children.children.children'
@@ -1064,6 +1070,7 @@ type GoogleFormsFieldsEnum =
   | 'children.parent.internal.type'
   | 'children.parent.parent.children'
   | 'children.parent.parent.id'
+  | 'civil'
   | 'form'
   | 'id'
   | 'internal.content'
@@ -1075,6 +1082,8 @@ type GoogleFormsFieldsEnum =
   | 'internal.mediaType'
   | 'internal.owner'
   | 'internal.type'
+  | 'link'
+  | 'mehndi'
   | 'parent.children'
   | 'parent.children.children'
   | 'parent.children.children.children'
@@ -1115,14 +1124,20 @@ type GoogleFormsFieldsEnum =
   | 'parent.parent.internal.owner'
   | 'parent.parent.internal.type'
   | 'parent.parent.parent.children'
-  | 'parent.parent.parent.id';
+  | 'parent.parent.parent.id'
+  | 'reception';
 
 type GoogleFormsFilterInput = {
+  readonly bbq: InputMaybe<BooleanQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly civil: InputMaybe<BooleanQueryOperatorInput>;
   readonly form: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly mehndi: InputMaybe<BooleanQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly reception: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 type GoogleFormsGroupConnection = {
@@ -2230,11 +2245,16 @@ type Query_fileArgs = {
 
 
 type Query_googleFormsArgs = {
+  bbq: InputMaybe<BooleanQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
+  civil: InputMaybe<BooleanQueryOperatorInput>;
   form: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  link: InputMaybe<StringQueryOperatorInput>;
+  mehndi: InputMaybe<BooleanQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  reception: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 
@@ -3608,12 +3628,12 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type HomeQuery = { readonly allGoogleForms: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly form: string | null } }> }, readonly lg: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly sm: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly xs: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+type HomeQuery = { readonly lg: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly sm: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly xs: { readonly id: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
 type SiteTitleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteTitleQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null, readonly allGoogleForms: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly form: string | null } }> } };
+type SiteTitleQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null, readonly allGoogleForms: { readonly edges: ReadonlyArray<{ readonly node: { readonly id: string, readonly form: string | null, readonly bbq: boolean | null, readonly civil: boolean | null, readonly mehndi: boolean | null, readonly reception: boolean | null } }> } };
 
 type TravelQueryVariables = Exact<{ [key: string]: never; }>;
 
