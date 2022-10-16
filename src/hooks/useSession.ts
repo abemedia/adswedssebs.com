@@ -1,15 +1,19 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
+const isBrowser = () => typeof window !== 'undefined'
+
 const getItem = (key: string) => {
-  const value = window?.sessionStorage.getItem(key)
+  if (!isBrowser()) return undefined
+  const value = window.sessionStorage.getItem(key)
   return value ? JSON.parse(value) : undefined
 }
 
 const setItem = <S>(key: string, value: S) => {
+  if (!isBrowser()) return
   if (value === undefined) {
-    window?.sessionStorage.removeItem(key)
+    window.sessionStorage.removeItem(key)
   } else {
-    window?.sessionStorage.setItem(key, JSON.stringify(value))
+    window.sessionStorage.setItem(key, JSON.stringify(value))
   }
 }
 
