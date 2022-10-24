@@ -29,10 +29,6 @@ function EventsPage() {
       a: 'In February, you can expect an average of 27°C- 32°C in the day falling slightly in the evenings. It may  get slightly windy near the beach side in the evenings so you can carry a light shawl or jacket.  There will be plenty of sun expected in that month so get ready with your sun block lotions for some fun in the pool, sea and on the beautiful white beaches.',
     },
     {
-      q: 'Are kids welcome?',
-      a: "We want to share our day with you all, the whole family. That means the little, and not so little people, are all welcome. We recognize that some of you will want to lose them from time to time to relax and for that reason, we have chosen a hotel that is able to help has a supervised children's activity center where they can be left to enjoy themselves. Please reach out if you have questions!",
-    },
-    {
       q: 'Are the ceremony and reception locations wheelchair accessible?',
       a: 'Yes',
     },

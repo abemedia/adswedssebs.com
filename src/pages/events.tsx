@@ -101,7 +101,7 @@ function EventsPage() {
                               <dt>Where</dt>
                               <dd>Beach Front Lawns, Sarova Whitesands</dd>
                               <dt>Dress Code</dt>
-                              <dd>Smart Casual</dd>
+                              <dd>Smart</dd>
                             </dl>
                           </Card.Footer>
                         </Card>
