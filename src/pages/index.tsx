@@ -124,7 +124,7 @@ function IndexPage({ data }: PageProps<Must<Queries.HomeQuery>>) {
               <Section variant="primary" className="text-white text-center">
                 <Container>
                   <p className="display-4 mb-4">
-                    Please don’t forget to RSVP by the 10th November 2022.
+                    Please don’t forget to RSVP by the 30th November 2022.
                   </p>
                   <Button
                     size="lg"
