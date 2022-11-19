@@ -61,7 +61,7 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
-    "husky": "^8.0.1",
+    "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "sass": "^1.56.0",
