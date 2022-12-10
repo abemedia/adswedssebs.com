@@ -32,7 +32,7 @@
     "gatsby-remark-smartypants": "^5.24.0",
     "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-inline-svg": "^1.2.0",
-    "gatsby-transformer-remark": "^5.24.0",
+    "gatsby-transformer-remark": "^5.25.0",
     "gatsby-transformer-sharp": "^4.24.0",
     "gatsby-transformer-yaml": "^4.24.0",
     "intersection-observer": "^0.12.2",
