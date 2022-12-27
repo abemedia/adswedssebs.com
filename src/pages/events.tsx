@@ -43,9 +43,9 @@ function EventsPage() {
                         <Card.Footer>
                           <dl>
                             <dt>When</dt>
-                            <dd>Sunday 19th Feb 2023 | 7pm - late</dd>
+                            <dd>Sunday 19th Feb 2023 | 6pm</dd>
                             <dt>Where</dt>
-                            <dd>The Kumbi Conference Center, Sarova Whitesands</dd>
+                            <dd>Beach Front Lawns, Sarova Whitesands</dd>
                             <dt>Dress Code</dt>
                             <dd>Formal</dd>
                           </dl>
@@ -72,7 +72,7 @@ function EventsPage() {
                           <Card.Footer>
                             <dl>
                               <dt>When</dt>
-                              <dd>Friday 17th Feb 2023 | 6:30pm - 11pm</dd>
+                              <dd>Friday 17th Feb 2023 | 6:30pm</dd>
                               <dt>Where</dt>
                               <dd>Beach Front Lawns, Sarova Whitesands</dd>
                               <dt>Dress Code</dt>
@@ -97,7 +97,7 @@ function EventsPage() {
                           <Card.Footer>
                             <dl>
                               <dt>When</dt>
-                              <dd>Saturday 18th Feb 2023 | 5pm - 6.45pm</dd>
+                              <dd>Saturday 18th Feb 2023 | 3:45pm</dd>
                               <dt>Where</dt>
                               <dd>Beach Front Lawns, Sarova Whitesands</dd>
                               <dt>Dress Code</dt>
@@ -123,7 +123,7 @@ function EventsPage() {
                           <Card.Footer>
                             <dl>
                               <dt>When</dt>
-                              <dd>Saturday 18th Feb 2023 | 8.30pm - late</dd>
+                              <dd>Saturday 18th Feb 2023 | 8.00pm</dd>
                               <dt>Where</dt>
                               <dd>The Kumbi Conference Center, Sarova Whitesands</dd>
                               <dt>Dress Code</dt>
@@ -150,9 +150,9 @@ function EventsPage() {
                           <Card.Footer>
                             <dl>
                               <dt>When</dt>
-                              <dd>Sunday 19th Feb 2023 | 7pm - late</dd>
+                              <dd>Sunday 19th Feb 2023 | 6pm</dd>
                               <dt>Where</dt>
-                              <dd>The Kumbi Conference Center, Sarova Whitesands</dd>
+                              <dd>Beach Front Lawns, Sarova Whitesands</dd>
                               <dt>Dress Code</dt>
                               <dd>Formal</dd>
                             </dl>
